@@ -1,13 +1,13 @@
 ---
-title: "dennis1"
+title: "dennis_r"
 num_samples: 20
 path: "smooth"
-random: False
+random: True
+generate_dataset: False
 split:
  - 70
  - 20
  - 10
-h5: False
 
 lighting:
  light_type: "POINT"
@@ -42,3 +42,4 @@ camera:
   - 18.66
   - 17.36
 
+s

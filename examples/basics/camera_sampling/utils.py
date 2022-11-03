@@ -59,12 +59,12 @@ def plot_images(
 def plot_nimages(
     images: List[np.ndarray],
     image_titles: List[str],
-    environment: Dict[str, Any],
     args,
     ignore: bool = False,
     cmap: bool = True,
     figsize: Tuple = (25, 15),
     path_title: str = "r",
+    image_title: str = "random"
 ) -> None:
     """ Display an n column image 
     :param images: list of images
@@ -89,7 +89,7 @@ def plot_nimages(
             f1_axes[i].set_title("{}".format(image_titles[i]))
     if not os.path.exists(f"{args.output_dir}/{path_title}"):
         os.makedirs(f"{args.output_dir}/{path_title}")
-    fig1.savefig(f"{args.output_dir}/{path_title}/{environment['path']}.png")
+    fig1.savefig(f"{args.output_dir}/{path_title}/{image_title}.png")
 
 
 def save_images(
@@ -99,10 +99,11 @@ def save_images(
     image_titles: List[str] = None,
     path_title: str = "r",
     cmap: str = "viridis",
-    image_type: str = None
+    image_type: str = None,
+    image_title: str = "random"
 ) -> None:
-    if environment["path"] == "random" or environment["path"] == "light":
-        plot_nimages(images, image_titles,environment,args, path_title=environment["title"])
+    if image_titles is not None:
+        plot_nimages(images, image_titles,args, path_title=path_title,image_title=image_title)
     else:
         if not os.path.exists(f"{args.output_dir}/{path_title}"):
             os.makedirs(f"{args.output_dir}/{path_title}")
