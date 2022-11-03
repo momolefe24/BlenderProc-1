@@ -5,8 +5,10 @@ import argparse
 # import debugpy
 import sys
 import yaml
-path_files = "/home/molefe/Playground/Research/Synthesising Virtual Fashion Try-On with Neural Radiance Fields/Constrain Dataset/version1/BlenderProc/examples/basics/camera_sampling"
+# path_files = "/home/molefe/Playground/Research/Synthesising Virtual Fashion Try-On with Neural Radiance Fields/Constrain Dataset/version1/BlenderProc/examples/basics/camera_sampling"
+path_files = "/mnt/c/Users/Mo Molefe/Playground/Research/Synthesising Virtual Fashion Try-On with Neural Radiance Fields/BlenderProc-1/examples/basics/camera_sampling"
 sys.path.append(path_files)
+
 from coordinates import *
 from utils import *
 
@@ -35,7 +37,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument(
     "scene",
     nargs="?",
-    default="examples/resources/Marina-converted.obj",
+    default="examples/resources/dennis.blend",
     help="Path to the scene.obj file",
 )
 parser.add_argument(
