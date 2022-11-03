@@ -1,6 +1,6 @@
 ---
-title: "dennis_r"
-num_samples: 20
+title: "dennis"
+num_samples: 5
 path: "smooth"
 random: True
 generate_dataset: False

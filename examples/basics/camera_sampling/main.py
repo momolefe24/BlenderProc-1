@@ -111,6 +111,7 @@ def test_default_position():
 
 # ------------------------------------------------------------- Generating Dataset  -------------------------------------------------------------
 def generate_dataset():
+    bproc.init()
     path_title = environment['title']
     initial_location = np.array(camera['location'])
     folders = ["train","valid","test"]
@@ -150,7 +151,6 @@ def generate_images(locations:List[float],transforms:Dict[str,Any],path_title,fo
     :param path_title: Usually name of the model, i.e marina
     :param folder: Describes what kind of folder we are saving in, i.e folder="train"
     """
-    bproc.init()
     blender_object = args.scene.split("/")[-1].split(".")[-1]
     if blender_object == 'obj':
         objs = bproc.loader.load_obj(args.scene)
